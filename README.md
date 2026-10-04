@@ -2,6 +2,12 @@
 
 > **运行前资源配置（dotfiles / bootstrap）** —— 换机器、换助手（Hermes / WorkBuddy / 其他）时，拉这个仓库 + 跑一条脚本，环境原地复活。
 
+## skills 怎么用：按链，不单独用
+
+skills 目录是**安装单位**（平铺装进 `~/.workbuddy/skills/`），实际使用按 **[chains/REGISTRY.md](chains/REGISTRY.md)** 的链路串起来：
+每条链 = 口令触发 → 按序调 skill → **文件交接**（上一步产物路径 = 下一步输入）→ 门控不过关就停。
+改链路只改 REGISTRY.md 一个文件。
+
 ## 这是什么
 
 三层内容：
