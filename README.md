@@ -16,6 +16,24 @@ backup 明文只在 vault `System/AI-API-清单.md`（私有库）。
 
 ## 恢复（新机器 / 新助手）
 
+```mermaid
+flowchart LR
+    A[新机器 / 新助手] --> B[gh auth login]
+    B --> C["git clone agent-bootstrap"]
+    C --> D["bash install.sh"]
+    D --> D1["26 skills → ~/.workbuddy/skills/"]
+    D --> D2["mcp.json → ~/.workbuddy/"]
+    D1 --> E{"补密钥<br/>(手动)"}
+    D2 --> E
+    E -->|"security add-generic-password<br/>key: agnes-ai / agnes-ai-2 / cloudinary"| F[CLI 按清单装回<br/>opencli · gflow-cli · gallery-dl]
+    F --> G["vault 本体从 iCloud / 备份 zip 恢复"]
+    G --> H[✅ 原地复活]
+    style A fill:#f5e6d3,color:#3d1909
+    style H fill:#d3f5d9,color:#1a3d20
+```
+
+步骤明细：
+
 ```bash
 git clone https://github.com/sethliao/agent-bootstrap.git && cd agent-bootstrap
 bash install.sh          # 拷 skills + mcp.json 到 ~/.workbuddy/
