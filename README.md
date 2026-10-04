@@ -33,4 +33,5 @@ bash install.sh          # 拷 skills + mcp.json 到 ~/.workbuddy/
 
 ## 仓库可见性
 
-**Private**（部分 skill 含商业打法，如 b2b-anchor-proposal）。要分享单个 skill 时单独拷出去。
+**Public**（Seth 2026-10-05 拍板：去掉 API key 即可发）。密钥全在 keychain，本仓三道扫描零命中。
+个别 skill 含商业打法（如 b2b-anchor-proposal），按本人意愿随仓公开。
