@@ -15,14 +15,15 @@ sync_one() {
   echo "    ok $name"
 }
 
+# 方向约定（与 README 一致）：push = 真源(~/.workbuddy) → 本仓 · pull = 本仓 → 真源
 for d in "$SRC"/skills/*/; do
   name=$(basename "$d")
-  if [ "$MODE" = "push" ]; then sync_one "$name" "$SRC/skills" "$WB/skills"; else sync_one "$name" "$WB/skills" "$SRC/skills"; fi
+  if [ "$MODE" = "push" ]; then sync_one "$name" "$WB/skills" "$SRC/skills"; else sync_one "$name" "$SRC/skills" "$WB/skills"; fi
 done
 
 # chains 同步（真源 = 仓内 chains/REGISTRY.md，运行时副本在 ~/.workbuddy/chains/）
 mkdir -p "$WB/chains"
-if [ "$MODE" = "push" ]; then
+if [ "$MODE" = "pull" ]; then
   cp "$SRC/chains/REGISTRY.md" "$WB/chains/REGISTRY.md" && echo "    ok chains/REGISTRY.md"
 else
   [ -f "$WB/chains/REGISTRY.md" ] && cp "$WB/chains/REGISTRY.md" "$SRC/chains/REGISTRY.md" && echo "    ok chains/REGISTRY.md"

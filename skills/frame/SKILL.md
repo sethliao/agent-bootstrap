@@ -45,6 +45,9 @@ Because it's a whole frame: hour or day is what I want to work on things.」
 
 1. 读 `000-下一件事.md`（现在该做什么 + 现在到哪了 + 提示词，**一页全覆盖**）
 2. 读 `.workbuddy/memory/MEMORY.md`（项目铁律）
+3. ⭐ **链路由（2026-10-05 通车）**：这框要做的是成片/跑通/发布这类多步活时，
+   读 `~/.workbuddy/chains/REGISTRY.md`（真源 `~/Code/agent-bootstrap/chains/REGISTRY.md`）按链执行——
+   口令触发 → 按序调 skill → 文件交接 → 门控不过关就停。没有合适的链就提议新建，别散着调 skill。
 
 > ⚠️ **不要预先读 `000-线索引.md`** —— 那是「找东西」的目录，等真要动某条线时**按需开、只跳那一行**。
 > **Seth 2026-09-29 原话：「我感觉你读整个文件有点慢」** —— 慢的根因是开工就读 6 个大文件，不是模型。
