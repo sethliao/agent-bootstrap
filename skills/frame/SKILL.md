@@ -27,7 +27,7 @@ Because it's a whole frame: hour or day is what I want to work on things.」
 | `000-线索引.md` | **东西在哪**（每条线的看板/数据/脚本） | 我，有新线/新产物时补行 · **按需读，不预先读** |
 | `000-历史实录.md` | 历史细节（原 `000-Handover-Archive.md`） | 我，收工时有历史要挪才写 |
 | `Daily/YYYY-MM-DD.md` | 这一框干了什么（**append-only**） | 我，收工写 |
-| `HermesBrain/Memory/Decisions/` | 结论（下次不该重新推导的） | 我，收工写 |
+| `AIbrain/Memory/Decisions/` | 结论（下次不该重新推导的） | 我，收工写 |
 | `.workbuddy/memory/MEMORY.md` | 项目铁律（机器读） | 我，只在有长期价值时改 |
 
 > ⭐ **2026-09-29 合并**：原 `000-Handover.md` **已并入 `000-下一件事.md`**
@@ -78,8 +78,12 @@ Because it's a whole frame: hour or day is what I want to work on things.」
       **不许凭记忆报完成**（这是最容易翻车的一步）。
 - [ ] **3. 写 `Daily/YYYY-MM-DD.md`** —— **append**，不覆盖。一框一段，写「做了什么 + 踩了什么坑 + 下一步」。
       文件不存在就先创建。
-- [ ] **4. 落 `HermesBrain/Memory/Decisions/`** —— 只写「下次不该重新推导」的结论。
+- [ ] **4. 落 `AIbrain/Memory/Decisions/`** —— 只写「下次不该重新推导」的结论。
       纯操作细节不进这里（那些进 Daily 或 Wiki）。
+- [ ] **4.5 画 as-built 流程图**（Seth 2026-10-05 定的惯例）——
+      这框如果做了有流程/架构的活（管线、工具链、多步骤方案），用 **Mermaid**（```mermaid 代码块，Obsidian 能渲染）
+      画一张「实际跑成的样子」：入口在哪 → 用什么工具 → 产物落到哪。
+      放进相关文档（计划页 / Wiki / README）。跑前 Plan 里的图 + 跑后这张 = 对照，理解会不一样。
 - [ ] **5. 更新 `000-下一件事.md` 的「📌 现在到哪了」段** ——
       · 改成这一框之后的状态（**只写 30 秒版**，细节不进这里）
       · ⚠️ **超过 150 行就往 `000-历史实录.md` 挪**

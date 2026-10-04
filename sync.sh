@@ -3,7 +3,7 @@
 # 用法: bash sync.sh push|pull
 set -e
 SRC="$(cd "$(dirname "$0")" && pwd)"
-WB="$HOME/.workbuddy/skills"
+WB="$HOME/.workbuddy"
 MODE="${1:-}"
 [ -z "$MODE" ] && { echo "用法: bash sync.sh push|pull"; exit 1; }
 
@@ -17,6 +17,14 @@ sync_one() {
 
 for d in "$SRC"/skills/*/; do
   name=$(basename "$d")
-  if [ "$MODE" = "push" ]; then sync_one "$name" "$SRC/skills" "$WB"; else sync_one "$name" "$WB" "$SRC/skills"; fi
+  if [ "$MODE" = "push" ]; then sync_one "$name" "$SRC/skills" "$WB/skills"; else sync_one "$name" "$WB/skills" "$SRC/skills"; fi
 done
+
+# chains 同步（真源 = 仓内 chains/REGISTRY.md，运行时副本在 ~/.workbuddy/chains/）
+mkdir -p "$WB/chains"
+if [ "$MODE" = "push" ]; then
+  cp "$SRC/chains/REGISTRY.md" "$WB/chains/REGISTRY.md" && echo "    ok chains/REGISTRY.md"
+else
+  [ -f "$WB/chains/REGISTRY.md" ] && cp "$WB/chains/REGISTRY.md" "$SRC/chains/REGISTRY.md" && echo "    ok chains/REGISTRY.md"
+fi
 echo "==> sync $MODE 完成（记得 git add -A && git commit）"

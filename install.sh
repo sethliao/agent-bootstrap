@@ -16,6 +16,11 @@ for d in "$SRC"/skills/*/; do
   fi
 done
 
+echo "==> 1.5/3 拷贝 chains -> $WB/chains/（链注册表，agent 运行时读这里）"
+mkdir -p "$WB/chains"
+cp "$SRC"/chains/REGISTRY.md "$WB/chains/REGISTRY.md"
+echo "    ok chains/REGISTRY.md"
+
 echo "==> 2/3 拷贝 mcp.json -> $WB/mcp.json"
 if [ -f "$WB/mcp.json" ]; then
   cp "$WB/mcp.json" "$WB/mcp.json.bak-$(date +%Y%m%d-%H%M%S)"

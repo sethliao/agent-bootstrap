@@ -1,6 +1,6 @@
 ---
 name: ai-handover-pack
-description: 把 Obsidian 知识库（hermes_vault_clean）编译成「平台中立」的交接包，交给不能读本地文件夹的外部 AI 平台（扣子/Coze、Kimi、豆包、GPTs、ChatGPT 自定义 GPT 等）。清洗掉 Obsidian 专有语法（双链 [[]]、嵌入 ![[]]、dataview、相对路径链接），按平台限制自动分段，输出可上传的知识库文件 + 系统提示词 + 工作流蓝图 + 回执模板，并打包 zip。当用户说"把知识库交给扣子"、"做个交接"、"交接给别的 AI"、"导出给 Coze"、"在别的 AI 上做视频生产"、"怎么把 skills 交给其他 AI"、"AI 交接包"时使用。
+description: 把 Obsidian 知识库（ob_vault_s）编译成「平台中立」的交接包，交给不能读本地文件夹的外部 AI 平台（扣子/Coze、Kimi、豆包、GPTs、ChatGPT 自定义 GPT 等）。清洗掉 Obsidian 专有语法（双链 [[]]、嵌入 ![[]]、dataview、相对路径链接），按平台限制自动分段，输出可上传的知识库文件 + 系统提示词 + 工作流蓝图 + 回执模板，并打包 zip。当用户说"把知识库交给扣子"、"做个交接"、"交接给别的 AI"、"导出给 Coze"、"在别的 AI 上做视频生产"、"怎么把 skills 交给其他 AI"、"AI 交接包"时使用。
 agent_created: true
 ---
 
