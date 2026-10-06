@@ -21,6 +21,9 @@ flowchart LR
     subgraph C3[链3·对外发布]
         D1[design-codex] --> D2[HyperFrames] --> D3[design_audit·门控] --> D4[Seth验收·红线]
     end
+    subgraph C4[链4·大会提案]
+        E1[conference-pitch<br/>Phase0 调研] --> E2[Phase1 口径表] --> E3[Phase2-4<br>素材+8页HTML+PDF] --> E4[Phase5-6<br>邮件+发信清单] --> E5[Seth过目·门控]
+    end
     style F fill:#FAEEDA,color:#633806
 ```
 
@@ -58,6 +61,22 @@ flowchart LR
 | 2 | HyperFrames | 成片/成页 | → mp4/html | — |
 | 3 | `design_audit`（脚本） | AI 味指纹审计 | ←产物 → 审计分 | 分>0 修到 0 |
 | 4 | Seth 验收 | 人眼终审 | → 放行/打回 | ⛔ 不过审不发 |
+
+---
+
+## 链 4 · 大会提案（线② · skill `conference-pitch` = 总纲）
+
+**口令**：「开工·下一个大会」 · **红线**：⛔ 草稿先过 Seth · 未批不发 · 本人 Gmail 发 · 照片审美归 Seth
+
+| # | skill / 工具 | 干什么 | 交接物 | 门控 |
+|---|---|---|---|---|
+| 1 | `conference-pitch` Phase 0 | 调研大会：官网通道/决策链/赞助商分级 | → `002-Areas/<大会>-对接.md` | 数字按官网复核；赞助商名字在 logo alt 里 |
+| 2 | Phase 1 | 9 条口径表 + 禁用词 | → `<大会>-邮件正文.md` 口径节 | 主身份只报一个 |
+| 3 | Phase 2 | 照片池（img/ + img-pool + gdrive）+ 换图工作台 | → `img/` 定稿图 | ⛔ 照片 Seth 亲手选 |
+| 4 | Phase 3-4 | 8 页 HTML（复制 GOSIM 模板）+ 就地编辑 + 导出 PDF | → `003-Workbench/<大会>-proposal-<年月>/` | 逐页看图（pdftoppm）+ design_audit |
+| 5 | Phase 5-6 | 邮件短版 + 发信清单 | → `<大会>-发信清单.md`（唯一入口） | ⛔ status「待 Seth 过目·未发」= 终点 |
+
+> 参考实现：GOSIM Shenzhen 2026（`003-Workbench/gosim-final-2026-10/`）· 模板在 skill `templates/` 里
 
 ---
 
