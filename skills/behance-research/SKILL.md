@@ -12,7 +12,7 @@ agent_created: true
 
 ```bash
 S=~/.workbuddy/skills/behance-research/scripts/behance_fetch.py
-P=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+P=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
 
 $P $S search    --field "3d art" --search "panda" -o out.json --csv out.csv
 $P $S project  245233547  -o out.json          # 也可传完整 URL

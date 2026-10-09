@@ -37,6 +37,6 @@ cat <<'EOF'
   （svc 清单和 key 值见 vault System/AI-API-清单.md）
 - CLI 安装：见仓库 CLI-清单.md
 - WorkBuddy 连接器页 → 自定义连接器 → 对新 MCP server 点「信任」
-- vault 本体不在本仓：从 iCloud / 备份 zip 恢复 /Users/seth/Documents/ob_vault_s
+- vault 本体不在本仓：从 iCloud / 备份 zip 恢复 $VAULT_PATH
 EOF
 echo "==> 完成"

@@ -10,8 +10,8 @@
 # 环境变量可覆盖: GOSIM_REPO / GOSIM_PY
 set -euo pipefail
 
-REPO="${GOSIM_REPO:-/Users/seth/Code/gosim-survey26}"
-PY="${GOSIM_PY:-/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3}"
+REPO="${GOSIM_REPO:-~/Code/gosim-survey26}"
+PY="${GOSIM_PY:-~/.workbuddy/binaries/python/versions/3.13.12/bin/python3}"
 
 if [ ! -d "$REPO" ]; then
   echo "官方仓不在 $REPO" >&2

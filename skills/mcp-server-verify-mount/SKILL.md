@@ -37,7 +37,7 @@ which <目标命令>
 用 `scripts/mcp_probe.py`（自带最小 stdio 客户端，只需标准库）：
 
 ```bash
-/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3 \
+~/.workbuddy/binaries/python/versions/3.13.12/bin/python3 \
   scripts/mcp_probe.py -- uvx reach-mcp --transport stdio
 ```
 
@@ -74,13 +74,13 @@ WorkBuddy 的配置在 `~/.workbuddy/mcp.json`（**不是** `.mcp.json`）：
 
 1. 先 `Read` 整个文件，看清已有 server。
 2. 用 `Edit` 在 `mcpServers` 里**追加**一个 key，绝不覆盖已有的。
-3. **command 用绝对路径**（如 `/Users/seth/.local/bin/uvx`）。GUI 启动的宿主
+3. **command 用绝对路径**（如 `~/.local/bin/uvx`）。GUI 启动的宿主
    PATH 可能不含 `~/.local/bin`，写裸命令会启动失败。
 4. 写形状与本文件已有条目保持一致（该项目风格是带 `"enabled": true, "disabled": false`）。
 5. 写完**校验 JSON**：
 
 ```bash
-/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3 -c "
+~/.workbuddy/binaries/python/versions/3.13.12/bin/python3 -c "
 import json,os
 s=json.load(open(os.path.expanduser('~/.workbuddy/mcp.json')))['mcpServers']
 print(list(s.keys())); print('cmd exists:', os.path.exists(s['reach-mcp']['command']))"
@@ -93,7 +93,7 @@ print(list(s.keys())); print('cmd exists:', os.path.exists(s['reach-mcp']['comma
 
 ```json
 "<name>": {
-  "command": "/Users/seth/.local/bin/uvx",
+  "command": "~/.local/bin/uvx",
   "args": ["<pypi-package>", "--transport", "stdio"],
   "enabled": true,
   "disabled": false

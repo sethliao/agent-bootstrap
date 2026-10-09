@@ -11,7 +11,7 @@ agent_created: true
 ## 一、取数
 
 ```bash
-OC=/Users/seth/.local/bin/opencli
+OC=~/.local/bin/opencli
 
 # ---- B站 ----
 $OC bilibili user-videos <uid> -f json 2>/dev/null > pool.json   # 投稿：title/plays/date/url
@@ -124,7 +124,7 @@ $OC linkedin profile-experience -f json          # 工作经历
 
 ```bash
 yt-dlp --flat-playlist --dump-json --no-warnings "<playlist_url>" 2>/dev/null \
-  | /Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3 -c "
+  | ~/.workbuddy/binaries/python/versions/3.13.12/bin/python3 -c "
 import sys, json
 for l in sys.stdin:
     try: d = json.loads(l)

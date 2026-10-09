@@ -51,7 +51,7 @@ ln -s "$SRC/<skill-name>" <skill-name>
 **权威源优先级**：
 
 1. **该 CLI 自己的安装目录**（最权威，跟随 CLI 升级）
-   - npm 包：`/Users/seth/.local/lib/node_modules/<pkg>/skills/`
+   - npm 包：`~/.local/lib/node_modules/<pkg>/skills/`
    - 例：`@jackwener/opencli/skills/`、`@volcengine/ark-cli/skills/`
 2. **CLI 官方指定的 agent 安装位置**（如 `~/.claude/skills/`），当包内不含全部 skill 时用它
 3. **`~/.hermes/skills/` 或 `~/.hermes/profiles/<p>/skills/<类>/<name>/`**（用户自己的定制 skill）

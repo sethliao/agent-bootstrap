@@ -25,7 +25,7 @@ agent_created: true
    唯一真源 = `~/Library/Application Support/G-Labs Studio/webhook_config.json` → `api_key`。
    一键修复 + 重启 gateway：
    ```bash
-   P=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+   P=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
    $P ~/.workbuddy/skills/glabs-studio/scripts/glabs.py key --sync
    /usr/bin/python3 ~/Code/drama-claw-hermes/bin/daemon-run.py \
      --log ~/Code/drama-claw-hermes/logs/gateway.log --env NO_PROXY='*' \
@@ -95,7 +95,7 @@ curl -s -X POST http://127.0.0.1:8790/v1/images/generations \
   -H 'Content-Type: application/json' \
   -d '{"model":"nano-banana-pro","prompt":"...","size":"1344x768",
        "reference_images":[{"path":"/abs/path/ref.png","name":"ref.png"}]}'
-# → {"data":[{"url":"http://127.0.0.1:8790/files/x.jpg","local_path":"/Users/seth/.hermes/drama-gateway/media/x.jpg"}]}
+# → {"data":[{"url":"http://127.0.0.1:8790/files/x.jpg","local_path":"~/.hermes/drama-gateway/media/x.jpg"}]}
 ```
 
 **视频**（模型名含 `omni`/`flash`/`seedance`→`omni_flash`，否则 `veo_31_fast`）：
@@ -119,8 +119,8 @@ curl -s http://127.0.0.1:8790/v1/videos/glabs-xxxx
 
 **复用脚本 —— spec 驱动三件套**（在 vault `003-Workbench/_build/`，2026-09-19 重构，出图/出片/合成全 spec 化）：
 ```bash
-P=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
-cd ~/Documents/hermes_vault_clean/003-Workbench/_build
+P=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+cd $VAULT_PATH/003-Workbench/_build
 $P gen_frames.py specs/<x>.json     # 出图（支持 refs → 图生图）
 $P gen_clips.py  specs/<x>.json     # 出片（支持 per-clip duration / 额外 refs）
 $P assemble_reel.py specs/<x>.json  # 合成（xstack 式 xfade 链 + 免费 drone + loudnorm）

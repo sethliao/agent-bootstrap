@@ -64,8 +64,8 @@ prompt 里用 **`<Picture 1>` 指代**（不是 `@图片1`，那是网页端的�
 ### ⭐ 一条命令跑完（推荐，别手搓 curl）
 
 ```bash
-P=/Users/seth/.workbuddy/binaries/python/envs/default/bin/python
-S=/Users/seth/Documents/hermes_vault_clean/004-Tools/agnes.py
+P=~/.workbuddy/binaries/python/envs/default/bin/python
+S=$VAULT_PATH/004-Tools/agnes.py
 
 $P $S --ref 参考图.jpg --prompt "…" --seconds 8 --aspect 16:9 --out 出片.mp4
 ```
@@ -295,13 +295,13 @@ curl -s --noproxy '*' -A "$UA" -o first.jpg "<first-frame src>"
 「开新会话 → 设参数 → 传图 → 填 prompt → 发送 → 等 4 分钟 → 下载成片」。
 
 ```bash
-cd /Users/seth/.workbuddy/skills/agnes-video-prompt/scripts
+cd ~/.workbuddy/skills/agnes-video-prompt/scripts
 python3 run_agnes_recipe.py \
   --prompt /path/to/prompt.txt \
   --ref /path/to/ref.png \
   --ratio 16:9 \
   --duration 5 \
-  --outdir /Users/seth/Documents/hermes_vault_clean/Assets/<IP>/agnes-YYYYMMDD
+  --outdir $VAULT_PATH/Assets/<IP>/agnes-YYYYMMDD
 ```
 
 > 这脚本目前只支持**单张参考图** + **Agnes Video 2.5 Flash**。复杂情况（多图/首尾帧/音频）仍走 §三的手动步骤。

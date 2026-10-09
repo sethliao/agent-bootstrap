@@ -11,7 +11,7 @@ Behance 取数层（只读）· 浏览器补充模块
 
 用法
 ----
-    P=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+    P=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
     $P behance_browser.py following  seth_liao -o following.json
     $P behance_browser.py moodboards seth_liao -o moodboard-index.json
 

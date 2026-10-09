@@ -33,7 +33,7 @@ agent_created: true
 ### 第 0 步 · 看图（不可跳过）
 
 ```bash
-P=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+P=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
 S=~/.workbuddy/skills/behance-research/scripts/behance_fetch.py
 $P $S project <id> -o <data>/proj.json       # 拿 tools/tags/modules
 ```

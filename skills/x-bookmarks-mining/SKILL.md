@@ -12,7 +12,7 @@ agent_created: true
 ## 0. 前置检查
 
 ```bash
-O=/Users/seth/.local/bin/opencli
+O=~/.local/bin/opencli
 $O twitter whoami            # 确认登录态，返回 logged_in: true + username
 ```
 
@@ -39,7 +39,7 @@ $O twitter whoami            # 确认登录态，返回 logged_in: true + userna
 ## 2. 抓取（关键：正确重定向）
 
 ```bash
-O=/Users/seth/.local/bin/opencli
+O=~/.local/bin/opencli
 $O twitter bookmarks --limit 5000 -f json > /tmp/x_bm.json 2>/dev/null
 $O twitter likes     --limit 5000 -f json > /tmp/x_lk.json 2>/dev/null
 ```
@@ -111,7 +111,7 @@ opencli twitter article "<tweet-url>" -f json     # 字段: author / title / con
 ## 5. 落盘与出看板
 
 ```bash
-python3 /Users/seth/Documents/hermes_vault_clean/003-Workbench/_build/build_xbookmarks.py
+python3 $VAULT_PATH/003-Workbench/_build/build_xbookmarks.py
 ```
 
 读 `data/xbookmarks-*.json` → 生成三样东西：

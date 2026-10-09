@@ -48,8 +48,8 @@ Anthropic 官方 `frontend-design` 技能把「当前 AI 生成设计聚集的�
 | 用法 | `import design_codex as C` 取 token | `design_audit.py <file.html\|dir/>` |
 
 ```bash
-P=/Users/seth/.workbuddy/binaries/python/envs/default/bin/python
-B=/Users/seth/Documents/hermes_vault_clean/003-Workbench/_build
+P=~/.workbuddy/binaries/python/envs/default/bin/python
+B=$VAULT_PATH/003-Workbench/_build
 
 $P $B/design_audit.py path/to/page.html       # 审一个（交付前跑这个）
 $P $B/design_audit.py some/dir/               # 审整个目录
@@ -75,7 +75,7 @@ $P $B/design_audit.py page.html --only Q1,Q4  # 只查指定项
 在渲染脚本里消费 token：
 
 ```python
-import sys; sys.path.insert(0, "/Users/seth/Documents/hermes_vault_clean/003-Workbench/_build")
+import sys; sys.path.insert(0, "$VAULT_PATH/003-Workbench/_build")
 import design_codex as C
 
 CREAM = C.hexc(C.TOKENS["colors"]["plush-cream"])

@@ -17,12 +17,12 @@ agent_created: true
 
 | 事实 | 值 |
 |---|---|
-| 官方仓落地 | `/Users/seth/Code/gosim-survey26`（**库外** —— 带 `.git` 的 84MB 仓不进 Obsidian 同步目录） |
+| 官方仓落地 | `~/Code/gosim-survey26`（**库外** —— 带 `.git` 的 84MB 仓不进 Obsidian 同步目录） |
 | 跑分入口 | `examples/_local/runner/run_local.py`（**`verify_engine.py` 校验过 = 与平台字节一致**） |
 | 离线练习卡 | `examples/_local/cards/L1–L4`（**带 truth，完全不联网**） |
-| Python | `/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3`（**纯标准库，零依赖**） |
+| Python | `~/.workbuddy/binaries/python/versions/3.13.12/bin/python3`（**纯标准库，零依赖**） |
 
-若仓库不在 → `git clone https://github.com/gosimfoundation/hackathon-survey26.git /Users/seth/Code/gosim-survey26`
+若仓库不在 → `git clone https://github.com/gosimfoundation/hackathon-survey26.git ~/Code/gosim-survey26`
 
 ---
 
@@ -35,8 +35,8 @@ bash ~/.workbuddy/skills/gosim-survey-run/run_card.sh L4
 脚本等价于（手敲也行）：
 
 ```bash
-cd /Users/seth/Code/gosim-survey26
-PY=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+cd ~/Code/gosim-survey26
+PY=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
 export OPENAI_API_KEY=local-debug-no-llm OPENAI_BASE_URL=http://127.0.0.1:9/v1
 $PY examples/_local/runner/run_local.py --inherit-env \
    --card examples/_local/cards/L4 \
@@ -103,16 +103,16 @@ counts     = { decisions, observations, observe_actions, targets_observed,
 ## 5. 提交仓（参赛用）—— 别跟跑分仓搞混
 
 ⭐ **提交给平台的是这个**：[sethliao/gosim-survey26-agent](https://github.com/sethliao/gosim-survey26-agent)
-（本地 `/Users/seth/Code/gosim-survey26-agent`，**公开仓**）。
+（本地 `~/Code/gosim-survey26-agent`，**公开仓**）。
 
 | | 跑分仓 | 提交仓 |
 |---|---|---|
-| 路径 | `/Users/seth/Code/gosim-survey26` | `/Users/seth/Code/gosim-survey26-agent` |
+| 路径 | `~/Code/gosim-survey26` | `~/Code/gosim-survey26-agent` |
 | 是什么 | 官方整仓（平台+评分器+离线卡），**只读用** | **我们的参赛项目**，只含 agent |
 | 干什么 | 本地跑分出分 | 推上去，平台快照这个 revision |
 
 **改完 agent 要推两个地方**：新代码先进提交仓 `git commit && git push`（平台快照的是**远端 revision**，不是本地文件）；
-想本地验证就先在跑分仓用 `--agent-cwd /Users/seth/Code/gosim-survey26-agent` 跑一遍。
+想本地验证就先在跑分仓用 `--agent-cwd ~/Code/gosim-survey26-agent` 跑一遍。
 
 ⛔ **key 绝不进提交仓**：`.env` 已被 `.gitignore` 挡掉，**平台还会主动拒绝含 `.env` 的 ZIP**；
 运行时由平台注入它自己的模型代理 + 临时凭据（scoped credential）。
@@ -256,11 +256,11 @@ opencli browser gosim unbind                     # 用完释放
 # 1) 真 key 写本地 .env（已被 .gitignore 挡掉，⛔ 绝不进仓）
 #    DeepSeek 官方 key 是 35 字符 sk-xxxx(32)；51 字符那些是硅基流动等别家，别抓错
 printf 'OPENAI_BASE_URL=https://api.deepseek.com\nOPENAI_MODEL=deepseek-flash\nOPENAI_API_KEY=<35字符key>\n' \
-  > /Users/seth/Code/gosim-survey26-agent/.env && chmod 600 /Users/seth/Code/gosim-survey26-agent/.env
+  > ~/Code/gosim-survey26-agent/.env && chmod 600 ~/Code/gosim-survey26-agent/.env
 # 2) ⛔ 不加 --inherit-env（否则宿主占位 key 会覆盖 .env）
-cd /Users/seth/Code/gosim-survey26 && $PY examples/_local/runner/run_local.py \
+cd ~/Code/gosim-survey26 && $PY examples/_local/runner/run_local.py \
   --card examples/_local/cards/L1 --agent "$PY agent.py" \
-  --agent-cwd /Users/seth/Code/gosim-survey26-agent --out run_output/X_L1
+  --agent-cwd ~/Code/gosim-survey26-agent --out run_output/X_L1
 ```
 
 ⏱ **耗时**：无 LLM **7 秒/卡**；**真 LLM 约 190 秒/卡**（32 晚 × 2 次调用 × ~0.8s）。

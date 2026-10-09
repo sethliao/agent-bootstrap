@@ -29,7 +29,7 @@ agent_created: true
 ## 环境探测（先跑）
 
 ```bash
-export PATH=/Users/seth/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 opencli --version
 opencli list | head -40                       # 站点适配器清单
 for s in bilibili xiaohongshu douyin zhihu weibo youtube; do

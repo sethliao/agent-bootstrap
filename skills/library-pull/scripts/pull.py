@@ -31,7 +31,7 @@ import urllib.request
 SKILL = os.environ.get(
     "LIBRARY_SKILL_DIR",
     os.path.expanduser(
-        "/Users/seth/Library/Caches/com.tencent.workbuddy.mac.BundleMigration/backups/"
+        "~/Library/Caches/com.tencent.workbuddy.mac.BundleMigration/backups/"
         "WorkBuddy-5.5.4.38151288-1788946749595.backup.app/Contents/Resources/app.asar.unpacked/"
         "resources/plugins/workbuddy-builtin/skills/library"),
 )

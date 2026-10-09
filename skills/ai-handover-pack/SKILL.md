@@ -40,7 +40,7 @@ agent_created: true
 
 ```bash
 S=~/.workbuddy/skills/ai-handover-pack/scripts/build_handover.py
-P=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+P=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
 
 # 整包（改 config 里的 IP / 平台 / 文件清单）
 $P $S pack --config ~/.workbuddy/skills/ai-handover-pack/packs/xiaohou-coze.json --force
@@ -58,7 +58,7 @@ $P $S clean "path/to/note.md" -o /tmp/out.md
   "pack": "小厚先生 · 扣子视频生产",
   "ip": "小厚先生",
   "platform": "扣子 / Coze",
-  "out": "/Users/seth/Documents/ai-handover/xiaohou-coze",
+  "out": "~/Documents/ai-handover/xiaohou-coze",
   "docs": [
     { "src": "源文件绝对路径", "as": "01-知识库/01-角色圣经.md" },
     { "src": "已经平台中立的文件", "as": "00-系统提示词.md", "clean": true, "split": false }

@@ -25,7 +25,7 @@ agent_created: true
 先跑 `runtime_context.py`：
 
 ```bash
-SKILLDIR="/Users/seth/Library/Caches/com.tencent.workbuddy.mac.BundleMigration/backups/WorkBuddy-5.5.4.38151288-1788946749595.backup.app/Contents/Resources/app.asar.unpacked/resources/plugins/workbuddy-builtin/skills/library"
+SKILLDIR="~/Library/Caches/com.tencent.workbuddy.mac.BundleMigration/backups/WorkBuddy-5.5.4.38151288-1788946749595.backup.app/Contents/Resources/app.asar.unpacked/resources/plugins/workbuddy-builtin/skills/library"
 python3 "$SKILLDIR/runtime_context.py"     # → KS_LIBRARY_RUNTIME {"mode":"client"}
 ```
 

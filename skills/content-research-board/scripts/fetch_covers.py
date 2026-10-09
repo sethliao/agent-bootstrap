@@ -17,7 +17,7 @@ import json, os, re, shutil, subprocess, argparse, sys, tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OPENCLI = "/Users/seth/.local/bin/opencli"
+OPENCLI = "~/.local/bin/opencli"
 PROFILE = "hegpkpwu"          # 主号（小红书已登录）
 
 

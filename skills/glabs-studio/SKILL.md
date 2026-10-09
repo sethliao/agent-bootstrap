@@ -31,8 +31,8 @@ Grok Imagine、Meta AI、GPT Image 2，外加**本地**放大。
 ## 快速开始
 
 ```bash
-G=/Users/seth/.workbuddy/skills/glabs-studio/scripts/glabs.py
-P=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+G=~/.workbuddy/skills/glabs-studio/scripts/glabs.py
+P=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
 
 $P $G health                      # 服务活着吗（免 key）
 $P $G key                         # key 从哪来的 + 鉴权自测 ← 出问题先跑这个
@@ -159,7 +159,7 @@ app 把 key 存在 `~/Library/Application Support/<App Name>/webhook_config.json
 
 **修 key 的一句话**（app 改名/key 重置后跑它）：
 ```bash
-P=/Users/seth/.workbuddy/binaries/python/versions/3.13.12/bin/python3
+P=~/.workbuddy/binaries/python/versions/3.13.12/bin/python3
 $P - <<'PY'
 import json, pathlib
 h = pathlib.Path.home()

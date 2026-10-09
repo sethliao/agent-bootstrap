@@ -91,6 +91,21 @@ git add -A && git commit -m "..." && git push
 2. **文件交接，不靠对话记忆** —— 链的每一步产物有固定路径，下一步只认文件
 3. **真源一处** —— skill 真源在 `~/.workbuddy/skills/`，链真源在 `chains/REGISTRY.md`，本仓是备份 + 分发
 4. **「跑过」≠「跑通」** —— 每一环单独验证过才准进链
+5. **本机路径一律不进仓** —— 用户名级绝对路径（`/Users/<name>/…`）全部改成 `~/` 或占位符
+
+## 🔧 配置你的知识库路径（`VAULT_PATH`）
+
+skill 里凡是**指向 Obsidian 库内文件**的地方，一律用占位符 **`$VAULT_PATH`**，装完指向你自己的库：
+
+```bash
+# 方式一：设环境变量（推荐，脚本自动展开）
+export VAULT_PATH="$HOME/Documents/your-vault"
+
+# 方式二：全局替换
+grep -rl '$VAULT_PATH' ~/.workbuddy/skills/ | xargs sed -i '' "s|\$VAULT_PATH|$HOME/Documents/your-vault|g"
+```
+
+其余本机路径（Python 解释器、`~/Code/…` 等）已统一用 `~/` 开头，随 HOME 自动生效。
 
 ## License
 
